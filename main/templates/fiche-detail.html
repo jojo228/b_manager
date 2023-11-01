@@ -1,0 +1,219 @@
+
+{% extends 'dashboard.html' %}
+{% load static %}
+
+{% block content %}
+
+<li class="nav-item d-flex align-items-center">
+    <a href="{% url 'fae_print' x.id %}" class="nav-link text-body font-weight-bold px-0">
+      <i class=""></i>
+      <button type="submit" class="btn btn-outline-primary btn-sm mb-0" id ="printPageButton" >Imprimer</br>
+      <span class="d-sm-inline d-none"></span>
+    </a>
+</li>
+        <div class="container-fluid py-4">
+            <div class="row">
+            
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Niveau d’exécution de l’initiative</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-1">
+                            <hr class="horizontal gray-light my-4">
+                            <ul class="list-group">
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Montant des tranches déjà reçues :</strong> &nbsp; {{x.montant_recu}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">(%) de consommation de tranche reçue :</strong> &nbsp; {{x.pourcentage_consommer}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">(%) des activités réalisées</strong> &nbsp; {{x.pourcentage_activite_realiser}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Montant (restant) à recevoir  :</strong> &nbsp; {{x.montant_restant}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Description des performances, résultats concrets de votre activité et rentabilité :</strong> &nbsp; {{x.performance}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Changement renrégisté dans la mise en oeuvre et/ou réponse aux besoins identifiés :</strong> &nbsp; {{x.changement_enregistre}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Attente comblée (oui/non) à décrire/préciser :</strong> &nbsp; {{x.attente_comblee}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Gap à combler :</strong> &nbsp; {{x.gap_a_combler}} </li>
+                                <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Confirmations des cibles des ODD couverts par le projet (aller au-delà de l'objectif principal SVP) :</strong> &nbsp; {{x.confirmation_des_cibles}} </li>
+
+                                <li  class="list-group-item border-0 ps-0 text-sm">
+                                </li>
+                            </ul>
+                    
+                        </div>
+                    </div>
+                </div>
+            
+       
+
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Leçons apprises, difficultés, défis</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-1">
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Connaissance additionnelles axquises  :</strong> &nbsp; {{x.connaissances_acquise}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">leçons apprises :</strong> &nbsp; {{x.lecon_apprise}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Apport concret réalisé pae le projet en matière d'innovation:</strong> &nbsp; {{x.apport}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Difficultés rencontrées :</strong> &nbsp; {{x.difficulte}} </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm">
+                                    </li>
+                                </ul>
+                            </div>    
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Suivi et reporting</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body p-1">
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre de visites de suivi réalisées par Incubateur :</strong> &nbsp; {{x.visite_incubateur}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre de visites de suivi réalisées par Cabinet :</strong> &nbsp; {{x.visite_cabinet}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre de visites de suivi réalisées par FAIEJ:</strong> &nbsp; {{x.visite_faiej}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre de visites de suivi réalisées par Autres  :</strong> &nbsp; {{x.autre_visite}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre actuel de staffs/emplois créés depuis le début de l’appui (Hommes) :</strong> &nbsp; {{x.emploi_actuel_cree_homme}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre actuel de staffs/emplois créés depuis le début de l’appui (Femmes) :</strong> &nbsp; {{x.emploi_actuel_cree_femme}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre futur de staffs/emplois à créer (Hommes) :</strong> &nbsp; {{x.emploi_futur_cree_homme}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Nombre futur de staffs/emplois à créer (Femmes) : </strong> &nbsp; {{x.emploi_futur_cree_femme}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Mesure prise pour l’atténuation aux Changements climatiques ou d’entreprises vertes :</strong> &nbsp; {{x.mesure_changement_climatique}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Mesures prises pour l'égalité genre :</strong> &nbsp; {{x.mesure_egalite_genre}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Autres informations supplémentaires pertinentes sur le projet :</strong> &nbsp; {{x.autre_info}} </li>
+                                    <li class="list-group-item border-0 ps-0 text-sm"></li>
+                                </ul>
+                            </div>        
+                                
+                        </div>
+                    
+                    </div>
+                
+                </div>
+
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Communication et visibilité</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-1">
+                                {% comment %} <p class="text-sm">
+                                    {{x.montant_recu}}
+                                </p> {% endcomment %}
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Message/texte proposé pour la visibilité de communication :</strong> &nbsp; {{x.message_visibilite}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Vidéo réalisée (Oui/non)Partager la vidéo SVP :</strong> &nbsp; {{x.video.url}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Images disponibles à partager pour le site du PNUD:</strong> &nbsp; 
+                                        {% comment %} <a class="d-block shadow-xl border-radius-xl">
+                                    <img src="{{x.images.url}}"> 
+                                        </a> {% endcomment %}
+                                    </li>
+                                    {% comment %} <li class="list-group-item border-0 ps-0 text-sm"> {% endcomment %}
+                                    </li>
+                                </ul>
+                            </div>    
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Partenariats</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-1">
+
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Description des partenariats établis avec d’autres acteurs:</strong> &nbsp; {{x.partenariat_etabli}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Description des partenariats à établir :</strong> &nbsp; {{x.partenariat_futur}} </li>
+                                    </li>
+                                    {% comment %} <li class="list-group-item border-0 ps-0 text-sm"> {% endcomment %}
+                                    </li>
+                                </ul>
+                            </div>    
+                        </div>
+                    </div>
+                
+                </div>
+                <div class="col-12 col-xl-6">
+                    <div class="card h-100">
+                        <div class="card-header pb-0 p-3">
+                            <div class="row">
+                                <div class="col-md-8 d-flex align-items-center">
+                                    <h6 class="mb-0">Perspectives et étapes prochaines</h6>
+                                </div>
+                                <div class="col-md-4 text-end">
+                                    <a href="javascript:;">
+                                        <i class="fas fa-user-edit text-secondary text-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Profile"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body p-1">
+
+                                <hr class="horizontal gray-light my-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Résultats à atteindre dans les 6 prochains mois:</strong> &nbsp; {{x.resultat_esperer}} </li>
+                                    <li class="list-group-item border-0 ps-0 pt-0 text-sm"><strong class="text-dark">Recommandations pour améliorer le dispositif d’appui:</strong> &nbsp; {{x.recommandations}} </li>
+                                    </li>
+                                    {% comment %} <li class="list-group-item border-0 ps-0 text-sm"> {% endcomment %}
+                                    </li>
+                                </ul>
+                            </div>    
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+    {% endblock %} 

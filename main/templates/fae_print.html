@@ -1,0 +1,496 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <style>
+    @media print {
+        #printPageButton {
+            display: none;
+        }
+    }
+    </style>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Fiche_print</title>
+    <link rel="stylesheet" href="{% static 'assets/css/fae_print.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'assets/img/logos/PNUD.jpg'%}" alt="" class="img">
+        </div>
+        <div class="title">
+            <h1>
+                FICHE D'AUTO-SUIVI DES BENEFICIAIRES
+            </h1>
+            <h2>
+            </h2>
+        </div>
+    </header>
+    <main>
+        <table>
+            <tr>
+                <th class="head">
+                    Informations personnelles
+                </th>
+                <th class="input">
+
+                </th>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Nom et prénom du bénéficiaire :
+                </td>
+                <td class="input" >
+                    {{fiche.entrepreneur.user.get_full_name}}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Profession actuelle :
+                </td>
+                <td class="input">
+                   {{fiche.entrepreneur.profession_actuelle}}
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                   Sexe : 
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.sexe}}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Commune précise de l'activité :
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.commune}}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Région :
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.region}}
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Localisation (address physique) exacte de l'activité (rue, point de repère, etc...) :
+                </td>
+                <td class="input">
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    E-mail :
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.email}} 
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label">
+                    Téléphone :
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.user.contact}}
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td class="label">
+                    Niveau d'éducation de la promotrice (scolarisation) :
+                </td>
+                <td class="input">
+                    {{fiche.entrepreneur.niveau_education}}
+                </td>
+            </tr>
+
+                <tr>
+                    <th class="head label">
+                      Informations sur l'initiative (rappel)
+                    </th>
+                    <th class="input">
+                       
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Desciption brève de l'activité principale de l'initiative FTAI
+                    </td>
+                    <td class="input">
+                        {{fiche.entrepreneur.entreprise.description_activite}}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label">
+                        Attente rechercheé lors du démarrage de l'appui
+                    </td>
+                    <td class="input">
+                        {{fiche.entrepreneur.entreprise.attentes_recherchees}}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label">
+                        Confirmations des cibles des ODD couverts par le projet (aller au-delà de l'objectif principal SVP)
+                    </td>
+                    <td class="input">
+                        {{fiche.confirmation_des_cibles}}
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td class="label">
+                        Niveau d'éducation de la promotrice (scolarisation) :
+                    </td>
+                    <td class="input">
+                        {{fiche.entrepreneur.niveau_education}}
+                    </td>
+                </tr>
+
+
+    
+                <tr>
+                    <th class="head label">
+                        Niveau d'exécution de l'initiative
+                    </th>
+                    <th class="input">
+                            
+                    </th>
+                </tr>
+    
+                <tr>
+                    <td class="label">
+                        Montant approuvé
+                    </td>
+                    <td class="input">
+                        {{fiche.entrepreneur.entreprise.montant_approuve}}
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td class="label">
+                        Montant des tranches déjà reçues
+                    </td>
+                    <td class="input">
+                        {{fiche.montant_recu}}
+                    </td>
+                </tr>
+                    
+                <tr>
+                    <td class="label">
+                        (%) de consommation de tranche reçue
+                    </td>
+                    <td class="input">
+                          {{fiche.pourcentage_consommer}}  
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="label">
+                        (%) des activités réalisées
+                    </td>
+                    <td class="input">
+                        {{fiche.pourcentage_activite_realiser}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Montant (restant) à recevoir
+                    </td>
+                    <td class="input">
+                           {{fiche.montant_restant}} 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Description des performances, résultats concrets de votre activité et rentabilité
+                    </td>
+                    <td class="input">
+                           {{fiche.performance}} 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Changement renrégisté dans la mise en oeuvre et/ou réponse aux besoins identifiés
+                    </td>
+                    <td class="input">
+                            {{fiche.changement_enregistre}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Attente comblée (oui/non) à décrire/préciser
+                    </td>
+                    <td class="input">
+                           {{fiche.attente_comblee}} 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Gap à combler
+                    </td>
+                    <td class="input">
+                            {{fiche.gap_a_combler}}
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th class="head label">
+                        Leçons apprises, difficultés, défis
+                    </th>
+                    <th class="input">
+                          
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Connaissance additionnelles axquises (à décrire/préciser)
+                    </td>
+                    <td class="input">
+                           {{fiche.connaissances_acquise}} 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Leçons apprises (à décrire/préciser)
+                    </td>
+                    <td class="input">
+                        {{fiche.lecon_apprise}} 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Apport concret réalisé pae le projet en matière d'innovation
+                    </td>
+                    <td class="input">
+                            {{fiche.apport}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Difficultés rencontrées (techniques, logistiques, temps, financière, etc.)
+                    </td>
+                    <td class="input">
+                            {{fiche.difficulte}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">
+                        Utilisation des acquis dans vos activités (comment adapter ou internaliser les outils dans votre activité)
+                    </td>
+                    <td class="input">
+                            {{fiche.utilisation_des_acquis}}
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th class="head label">
+                        Suivi et reporting
+                    </th>
+                    <th class="input">
+                         
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Nombre de visites de suivi réalisées par : <br>
+                        Incubateur : <br>
+                        Cabinet : <br>
+                        FAIEJ : <br>
+                        Autres : <br>
+                    </td>
+                    <td class="input">
+                        <br>
+                        {{fiche.visite_incubateur}}<br>
+                        {{fiche.visite_cabinet}} <br>
+                        {{fiche.visite_faiej}}<br>
+                        {{fiche.autre_visite}}<br>
+                            
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                       Nombre de staffs/emplois créés depuis le début de l'appui <br>
+                       Actuel (H/F) : <br>
+                       Futur (H/F) : 
+                    </td>
+                    <td class="input">
+                            <br>
+                            {{fiche.emploi_actuel_cree_homme}}/{{fiche.emploi_actuel_cree_femme}}<br>
+                            {{fiche.emploi_futur_cree_homme}}/{{fiche.emploi_futur_cree_femme}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Mésure prise pour l'atténuation aux Changements climatiques ou d'entreprises vertes
+                    </td>
+                    <td class="input">
+                         {{fiche.mesure_changement_climatique}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Mésures prises pour l'égalité genre
+                    </td>
+                    <td class="input">
+                         {{fiche.mesure_egalite_genre}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Autres informations supplémentaires pertinentes sur le projet
+                    </td>
+                    <td class="input">
+                        {{fiche.autre_info}}
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th class="head label">
+                        Communication et visibilité
+                    </th>
+                    <th class="input">
+                            
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Message/texte proposé pour la visibilité de communication
+                    </td>
+                    <td class="input">
+                        {{fiche.message_visibilite}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                       Vidéo réalisée (Oui/non) <br>
+                       Partager la vidéo SVP
+                    </td>
+                    <td class="input">
+                        
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Images disponibles à partager pour le site du PNUD
+                    </td>
+                    <td class="input">
+                        
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th class="head label">
+                        Parténariats
+                    </th>
+                    <th class="input">
+                            
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Description des partenariats établis avec d'autres acteurs
+                    </td>
+                    <td class="input">
+                        {{fiche.partenariat_etabli}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Description des partenariats à établir
+                    </td>
+                    <td class="input">
+                        {{fiche.partenariat_futur}}
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <th class="head label">
+                        Perspectives et étapes prochaines
+                    </th>
+                    <th class="input">
+                            
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Résultats à atteindre dans les 6 prochains mois
+                    </td>
+                    <td class="input">
+                        {{fiche.resultat_esperer}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="label">
+                        Recommandations pour améliorer le dispositif d'appui
+                    </td>
+                    <td class="input">
+                        {{fiche.recommandations}}
+                    </td>
+                </tr>
+        </table>
+        <div class="d-grid gap-2 col-2 mx-auto">
+
+            <a id="printPageButton" href="{{fiche.get_absolute_url}}">Retour</a>
+
+            
+        </div>
+    </main>
+    
+
+    <script>
+        var url = document.getElementById("printPageButton").href;
+        print()
+        window.addEventListener('afterprint', (event) => { location.href = url; })
+    </script>
+</body>
+
+</html>
