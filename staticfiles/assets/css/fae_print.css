@@ -1,0 +1,74 @@
+body {
+    margin: 100px 5% 150px 5%;
+    font-family: sans-serif
+}
+
+header {
+    text-align: center
+}
+
+header .logo {
+    position: relative
+}
+
+header .logo img {
+    height: 180px;
+    margin-bottom: 50px
+}
+
+header .title h1 {
+    width: 500px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    margin: auto;
+    font-size: 25px
+}
+
+header .title h2 {
+    margin-top: 30px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-size: 25px
+}
+
+@media only screen and (min-width: 1000px) {
+    header {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: -35px
+    }
+
+    header .title {
+        margin-right: 300px;
+        margin-left: 400px
+    }
+}
+
+main table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width: 100%
+}
+
+main table th {
+    text-align: left;
+    border-right: 1px solid #000;
+    padding: 10px;
+    background-color: #dfb167
+}
+
+main table td {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 10px
+}
+
+main table .label {
+    width: 295px;
+    word-wrap: break-word
+}
+
+/*# sourceMappingURL=style.css.map */

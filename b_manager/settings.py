@@ -39,7 +39,7 @@ if not DEBUG:
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(',')
 DEVELOPMENT_MODE = os.getenv('DEVELOPMENT_MODE', 'False') == 'True'
 
-ALLOWED_HOSTS = ['127.0.0.1', '192.168.100.200']
+ALLOWED_HOSTS = ['127.0.0.1', '82.180.154.247', '.assigon.tg', 'suivi.assignon.tg']
 
 
 # Application definition
