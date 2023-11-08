@@ -203,7 +203,7 @@ class EntrepreneurJeufZoneListView(AdminStaffRequiredMixin, ListView):
 
 class EntrepreneurSeaFoundationListView(AdminStaffRequiredMixin, ListView):
     model = Entreprise
-    template_name = "initiative-SeaFoundation.html"
+    template_name = "initiative-seafoundation.html"
 
     def get_queryset(self):
         object_list = Entreprise.objects.filter(Q(initiative__nom="SEA FOUNDATION"))  # this line
