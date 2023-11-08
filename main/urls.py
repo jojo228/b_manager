@@ -18,7 +18,7 @@ urlpatterns = [
     path("entrepreneur_cnp", views.EntrepreneurCNPListView.as_view(), name="entrepreneur_cnp"),
     path("entrepreneur_JeufZone", views.EntrepreneurJeufZoneListView.as_view(), name="entrepreneur_JeufZone"),
     path("entrepreneur_seafoundation", views.EntrepreneurSeaFoundationListView.as_view(), name="entrepreneur_seafoundation"),
-    path("entrepreneur_younthconnect", views.EntrepreneurYounthConnectListView.as_view(), name="entrepreneur_younthconnect"),
+    path("entrepreneur_youthconnect", views.EntrepreneurYouthConnectListView.as_view(), name="entrepreneur_youthconnect"),
     path("entrepreneur/create",views.EntrepreneurCreateView.as_view(),name="create_entrepreneur",),
     path("entrepreneur/read/<int:pk>",views.EntrepreneurDetailView.as_view(),name="read_entrepreneur",),
     path("entrepreneur/update/<int:pk>",views.EntrepreneurUpdateView.as_view(),name="update_entrepreneur",),
@@ -55,12 +55,7 @@ urlpatterns = [
     path("fae/delete/<int:pk>",views.FAEDeleteView.as_view(),name="fae_delete",),
 
 
-    ######## Inititatives urls ########
-    path("ftai/", views.initiative_ftai,name="ftai"),
-    path("cnp/", views.initiative_cnp,name="cnp"),
-    path("sea-foundation/", views.initiative_seafoundation,name="sea"),
-    path("JeufZone/", views.initiative_jeufzone,name="jeuf"),
-    path("Younth-connect/", views.initiative_younthconnect,name="younth"),
+   
 
     ######## Others urls ########
     path("dashboard/", views.home, name="dashboard"),

@@ -121,23 +121,7 @@ def fiche_auto_evaluation(request):
     return render(request,"fiche-auto-evaluation.html")
 
 
-def initiative_ftai(request):
-    return render(request,"initiative-ftai.html")
 
-def initiative_cnp(request):
-    return render(request,"initiative-cnp.html")
-
-def initiative_jeufzone(request):
-    return render(request,"initiative-JeufZone.html")
-
-def initiative_seafoundation(request):
-    return render(request,"initiative-seafoundation.html")
-
-def initiative_younthconnect(request):
-    return render(request,"initiative-younthconnect.html")
-
-def add_beneficiaire(request):
-    return render(request,"ajouter-beneficiaire.html")
 
 # -----------------------------------------------------------------------------
 #### Super Admin Filter
@@ -231,13 +215,13 @@ class EntrepreneurSeaFoundationListView(AdminStaffRequiredMixin, ListView):
         return context
     
     
-#YounthConnect LIST
-class EntrepreneurYounthConnectListView(AdminStaffRequiredMixin, ListView):
+#YouthConnect LIST
+class EntrepreneurYouthConnectListView(AdminStaffRequiredMixin, ListView):
     model = Entreprise
     template_name = "initiative-younthconnect.html"
 
     def get_queryset(self):
-        object_list = Entreprise.objects.filter(Q(initiative__nom="YounthConnect"))  # this line
+        object_list = Entreprise.objects.filter(Q(initiative__nom="YouthConnect"))  # this line
         
         return object_list
     
